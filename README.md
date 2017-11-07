@@ -32,8 +32,9 @@
          * @param mhtSubAppId 微信子号对应多个公众号的时候必填,如果只对应一个公众号则不传
          * @param notifyUr 后台通知地址
          * @param channelAuthCode 支付码
+         * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
          */
-        function wx_scan_05(app,orderDetail,mhtSubAppId,notifyUrl,channelAuthCode)
+        function wx_scan_05(app,orderDetail,mhtSubAppId,notifyUrl,channelAuthCode,mhtOrderNo)
 
 - 支付宝被扫支付
 
@@ -44,8 +45,52 @@
          * @param orderDetail 商品名称,商品描述,商品价格(单位分),商品标记(用于营销活动)
          * @param notifyUr 后台通知地址
          * @param channelAuthCode 支付码
+         * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
          */
-        function ali_scan_05(app,orderDetail,notifyUrl,channelAuthCode)
+        function ali_scan_05(app,orderDetail,notifyUrl,channelAuthCode,mhtOrderNo)
+
+
+- 手Q被扫支付
+
+        /**
+         * 手Q被扫支付
+         * @param app appId(应用ID)和appKey ,
+         * 登录商户后台 : https://mch.ipaynow.cn ->商户中心->应用信息可以新增应用或查看appKey
+         * @param orderDetail 商品名称,商品描述,商品价格(单位分),商品标记(用于营销活动)
+         * @param notifyUrl 后台通知地址
+         * @param channelAuthCode 支付码
+         * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
+         */
+        exports.handq_scan_05 = function (app,orderDetail,notifyUrl,channelAuthCode,mhtOrderNo)
+
+
+- 京东被扫支付
+
+        /**
+         * 京东被扫支付
+         * @param app appId(应用ID)和appKey ,
+         * 登录商户后台 : https://mch.ipaynow.cn ->商户中心->应用信息可以新增应用或查看appKey
+         * @param orderDetail 商品名称,商品描述,商品价格(单位分),商品标记(用于营销活动)
+         * @param notifyUrl 后台通知地址
+         * @param channelAuthCode 支付码
+         * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
+         */
+        exports.jd_scan_05 = function (app,orderDetail,notifyUrl,channelAuthCode,mhtOrderNo)
+
+
+- 银联被扫支付
+
+        /**
+         * 银联被扫支付
+         * @param app appId(应用ID)和appKey ,
+         * 登录商户后台 : https://mch.ipaynow.cn ->商户中心->应用信息可以新增应用或查看appKey
+         * @param orderDetail 商品名称,商品描述,商品价格(单位分),商品标记(用于营销活动)
+         * @param notifyUrl 后台通知地址
+         * @param channelAuthCode 支付码
+         * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
+         */
+        exports.union_scan_05 = function (app,orderDetail,notifyUrl,channelAuthCode,mhtOrderNo)
+
 
 
 
@@ -58,8 +103,9 @@
          * @param orderDetail 商品名称,商品描述,商品价格(单位分),商品标记(用于营销活动)
          * @param mhtSubAppId 微信子号对应多个公众号的时候必填,如果只对应一个公众号则不传
          * @param notifyUrl 后台通知地址
+         * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
          */
-        function wx_scan_08(app,orderDetail,mhtSubAppId,notifyUrl)
+        function wx_scan_08(app,orderDetail,mhtSubAppId,notifyUrl,mhtOrderNo)
 
 
 - 支付宝主扫支付
@@ -70,8 +116,53 @@
          * 登录商户后台 : https://mch.ipaynow.cn ->商户中心->应用信息可以新增应用或查看appKey
          * @param orderDetail 商品名称,商品描述,商品价格(单位分),商品标记(用于营销活动)
          * @param notifyUrl 后台通知地址
+         * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
          */
-        function ali_scan_08(app,orderDetail,notifyUrl)
+        function ali_scan_08(app,orderDetail,notifyUrl,mhtOrderNo)
+
+
+- 手q主扫支付
+
+        /**
+         * 手q主扫支付
+         * @param app appId(应用ID)和appKey ,
+         * 登录商户后台 : https://mch.ipaynow.cn ->商户中心->应用信息可以新增应用或查看appKey
+         * @param orderDetail 商品名称,商品描述,商品价格(单位分),商品标记(用于营销活动)
+         * @param notifyUrl 后台通知地址
+         * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
+         */
+        exports.handq_scan_08 = function (app,orderDetail,notifyUrl,mhtOrderNo)
+
+
+- 京东主扫支付
+
+        /**
+         * 京东主扫支付
+         * @param app appId(应用ID)和appKey ,
+         * 登录商户后台 : https://mch.ipaynow.cn ->商户中心->应用信息可以新增应用或查看appKey
+         * @param orderDetail 商品名称,商品描述,商品价格(单位分),商品标记(用于营销活动)
+         * @param notifyUrl 后台通知地址
+         * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
+         */
+        exports.jd_scan_08 = function (app,orderDetail,notifyUrl,mhtOrderNo)
+
+
+
+- 银联主扫支付
+
+        /**
+         * 银联主扫支付
+         * @param app appId(应用ID)和appKey ,
+         * 登录商户后台 : https://mch.ipaynow.cn ->商户中心->应用信息可以新增应用或查看appKey
+         * @param orderDetail 商品名称,商品描述,商品价格(单位分),商品标记(用于营销活动)
+         * @param notifyUrl 后台通知地址
+         * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
+         */
+        exports.union_scan_08 = function (app,orderDetail,notifyUrl,mhtOrderNo)
+
+
+
+
 
 
 
@@ -84,8 +175,9 @@
          * @param orderDetail 商品名称,商品描述,商品价格(单位分),商品标记(用于营销活动)
          * @param notifyUrl 后台通知地址
          * @param frontNotifyUrl 前台页面跳转地址
+         * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
          */
-        function wx_p_account(app,orderDetail,notifyUrl,frontNotifyUrl)
+        function wx_p_account(app,orderDetail,notifyUrl,frontNotifyUrl,mhtOrderNo)
 
 
 
@@ -98,8 +190,23 @@
          * @param orderDetail 商品名称,商品描述,商品价格(单位分),商品标记(用于营销活动)
          * @param notifyUrl 后台通知地址
          * @param frontNotifyUrl 前台页面跳转地址
+         * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
          */
-        function ali_p_account(app,orderDetail,notifyUrl,frontNotifyUrl)
+        function ali_p_account(app,orderDetail,notifyUrl,frontNotifyUrl,mhtOrderNo)
+
+
+- 手Q公众号支付
+
+        /**
+         * 手Q公众号支付
+         * @param app appId(应用ID)和appKey ,
+         * 登录商户后台 : https://mch.ipaynow.cn ->商户中心->应用信息可以新增应用或查看appKey
+         * @param orderDetail 商品名称,商品描述,商品价格(单位分),商品标记(用于营销活动)
+         * @param notifyUrl 后台通知地址
+         * @param frontNotifyUrl 前台页面跳转地址
+         * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
+         */
+        exports.handq_p_account = function (app,orderDetail,notifyUrl,frontNotifyUrl,mhtOrderNo)
 
 
 
@@ -113,8 +220,9 @@
          * @param consumerCreateIp 用户支付IP
          * @param notifyUrl 后台通知地址
          * @param frontNotifyUrl 前台页面跳转地址
+         * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
          */
-        function wx_h5(app,orderDetail,consumerCreateIp,notifyUrl,frontNotifyUrl)
+        function wx_h5(app,orderDetail,consumerCreateIp,notifyUrl,frontNotifyUrl,mhtOrderNo)
 
 
 - 支付宝H5
@@ -126,8 +234,53 @@
          * @param orderDetail 商品名称,商品描述,商品价格(单位分),商品标记(用于营销活动)
          * @param notifyUrl 后台通知地址
          * @param frontNotifyUrl 前台页面跳转地址
+         * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
          */
-        function ali_h5(app,orderDetail,notifyUrl,frontNotifyUrl)
+        function ali_h5(app,orderDetail,notifyUrl,frontNotifyUrl,mhtOrderNo)
+
+
+
+- 银联H5
+
+        /**
+         * 银联H5
+         * @param app appId(应用ID)和appKey ,
+         * 登录商户后台 : https://mch.ipaynow.cn ->商户中心->应用信息可以新增应用或查看appKey
+         * @param orderDetail 商品名称,商品描述,商品价格(单位分),商品标记(用于营销活动)
+         * @param notifyUrl 后台通知地址
+         * @param frontNotifyUrl 前台页面跳转地址
+         * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
+         */
+        exports.unionpay_h5 = function (app,orderDetail,notifyUrl,frontNotifyUrl,mhtOrderNo)
+
+
+- 招行一网通H5
+
+        /**
+         * 招行一网通H5
+         * @param app appId(应用ID)和appKey ,
+         * 登录商户后台 : https://mch.ipaynow.cn ->商户中心->应用信息可以新增应用或查看appKey
+         * @param orderDetail 商品名称,商品描述,商品价格(单位分),商品标记(用于营销活动)
+         * @param notifyUrl 后台通知地址
+         * @param frontNotifyUrl 前台页面跳转地址
+         * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
+         */
+        exports.cmbywt_h5 = function (app,orderDetail,notifyUrl,frontNotifyUrl,mhtOrderNo)
+
+
+- 手Q H5
+
+        /**
+         * 手Q H5
+         * @param app appId(应用ID)和appKey ,
+         * 登录商户后台 : https://mch.ipaynow.cn ->商户中心->应用信息可以新增应用或查看appKey
+         * @param orderDetail 商品名称,商品描述,商品价格(单位分),商品标记(用于营销活动)
+         * @param notifyUrl 后台通知地址
+         * @param frontNotifyUrl 前台页面跳转地址
+         * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
+         */
+        exports.handq_h5 = function (app,orderDetail,notifyUrl,frontNotifyUrl,mhtOrderNo)
+
 
 
 - 支付宝网页web
@@ -138,8 +291,22 @@
          * 登录商户后台 : https://mch.ipaynow.cn ->商户中心->应用信息可以新增应用或查看appKey
          * @param orderDetail 商品名称,商品描述,商品价格(单位分),商品标记(用于营销活动)
          * @param notifyUrl 后台通知地址
+         * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
          */
-        function ali_web(app,orderDetail,notifyUrl) 
+        function ali_web(app,orderDetail,notifyUrl,mhtOrderNo) 
+
+
+- 银联网页web
+
+        /**
+         * 银联网页web
+         * @param app appId(应用ID)和appKey ,
+         * 登录商户后台 : https://mch.ipaynow.cn ->商户中心->应用信息可以新增应用或查看appKey
+         * @param orderDetail 商品名称,商品描述,商品价格(单位分),商品标记(用于营销活动)
+         * @param notifyUrl 后台通知地址
+         * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
+         */
+        exports.union_web = function (app,orderDetail,notifyUrl,mhtOrderNo)
 
 
 
@@ -152,21 +319,82 @@
          * @param orderDetail   商品名称,商品描述,商品价格(单位分),商品标记(用于营销活动),
          * @param consumerId  用户openId
          * @param notifyUrl 后台通知地址
+         * @param mhtOrderNo 商户订单号,如果为空则自动生成商户订单号
          */
-        function wx_app(app,orderDetail,consumerId,notifyUrl)
+        function wx_app(app,orderDetail,consumerId,notifyUrl,mhtOrderNo)
 
 
 
-- 商户支付订单查询
+- 商户被扫支付订单查询
 
         /**
-         * 商户支付订单查询
-         * @param mhtOrderNo    商户订单号
-         * @param appId 商户的AppId,https://mch.ipaynow.cn ->商户中心->应用信息可以新增应用或查看appKey
-         * @param appKey 商户的AppKey,https://mch.ipaynow.cn ->商户中心->应用信息可以新增应用或查看appKey
-         * @param deviceType    被扫05，主扫08，公众号传0600，h5传0601，网页04
-         */
-         function queryOrder(mhtOrderNo,app,deviceType)
+        * 商户被扫支付订单查询
+        * @param mhtOrderNo    商户订单号
+        * @param app appId(应用ID)和appKey ,
+        * 登录商户后台 : https://mch.ipaynow.cn ->商户中心->应用信息可以新增应用或查看appKey
+        * @return
+        */
+        exports.queryOrderScan05 = function (mhtOrderNo,app)
+
+
+- 商户主扫支付订单查询
+
+        /**
+        * 商户主扫支付订单查询
+        * @param mhtOrderNo    商户订单号
+        * @param app appId(应用ID)和appKey ,
+        * 登录商户后台 : https://mch.ipaynow.cn ->商户中心->应用信息可以新增应用或查看appKey
+        * @return
+        */
+        exports.queryOrderScan08 = function (mhtOrderNo,app)
+
+
+- 商户公众号支付订单查询
+
+        /**
+        * 商户公众号支付订单查询
+        * @param mhtOrderNo    商户订单号
+        * @param app appId(应用ID)和appKey ,
+        * 登录商户后台 : https://mch.ipaynow.cn ->商户中心->应用信息可以新增应用或查看appKey
+        * @return
+        */
+        exports.queryOrderPaccount = function (mhtOrderNo,app) 
+
+
+- 商户H5支付订单查询
+
+        /**
+        * 商户H5支付订单查询
+        * @param mhtOrderNo    商户订单号
+        * @param app appId(应用ID)和appKey ,
+        * 登录商户后台 : https://mch.ipaynow.cn ->商户中心->应用信息可以新增应用或查看appKey
+        * @return
+        */
+        exports.queryOrderH5 = function (mhtOrderNo,app)
+
+
+- 商户网页支付订单查询
+
+        /**
+        * 商户网页支付订单查询
+        * @param mhtOrderNo    商户订单号
+        * @param app appId(应用ID)和appKey ,
+        * 登录商户后台 : https://mch.ipaynow.cn ->商户中心->应用信息可以新增应用或查看appKey
+        * @return
+        */
+        exports.queryOrderWeb = function (mhtOrderNo,app)
+
+
+- 商户微信小程序支付订单查询
+
+        /**
+        * 商户微信小程序支付订单查询
+        * @param mhtOrderNo    商户订单号
+        * @param app appId(应用ID)和appKey ,
+        * 登录商户后台 : https://mch.ipaynow.cn ->商户中心->应用信息可以新增应用或查看appKey
+        * @return
+        */
+        exports.queryOrderWxApp = function (mhtOrderNo,app)
 
 
 
