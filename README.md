@@ -426,25 +426,25 @@
 
 
 <h4 id='2.2'>2.2 支付结果通知</h4>
-        var redis = require('redis');
-        var http = require('http');
-        var url = require("url");
-        var querystring = require("querystring");
-        http.createServer(function (req, res) {
-            req.setEncoding('utf-8');
-            var postData = ""; //POST & GET ： name=zzl&email=zzl@sina.com
-            req.addListener("data", function (postDataChunk) {
-                postData += postDataChunk;
-            });
-            // 数据接收完毕，执行回调函数
-            req.addListener("end", function () {
-                console.log('数据接收完毕');
-                var params = querystring.parse(postData);
-                //报文数据字符串
-                console.log(params);
-                ...
-            });
-        }).listen(8000, "127.0.0.1");
+                var redis = require('redis');
+                var http = require('http');
+                var url = require("url");
+                var querystring = require("querystring");
+                http.createServer(function (req, res) {
+                    req.setEncoding('utf-8');
+                    var postData = ""; //POST & GET ： name=zzl&email=zzl@sina.com
+                    req.addListener("data", function (postDataChunk) {
+                        postData += postDataChunk;
+                    });
+                    // 数据接收完毕，执行回调函数
+                    req.addListener("end", function () {
+                        console.log('数据接收完毕');
+                        var params = querystring.parse(postData);
+                        //报文数据字符串
+                        console.log(params);
+                        ...
+                    });
+                }).listen(8000, "127.0.0.1");
 
 
 字段含义如下:
