@@ -6,7 +6,7 @@
 
 - 1.0.0 : 初稿
 
-
+- 1.0.1 : 允许客户指定调用生产或测试环境
 
 ## 目录 ##
 
@@ -723,8 +723,8 @@
 
 	//SDK依赖
         var sdk = require('./sdk');
-        //AppId和AppKey
-        var app = new sdk.App("xxxxxxxxxxxx","xxxxxxxxxxx")
+        //AppId和AppKey,最后参数true表示调用测试环境,false表示调用生产环境
+        var app = new sdk.App("xxxxxxxxxxxx","xxxxxxxxxxx",false)
         //商品信息: 名称,简称,价格(分),打折码
         var orderDetail = new sdk.OrderDetail("哈哈哈24","mhtOrderDetail","1","")
         //微信主扫

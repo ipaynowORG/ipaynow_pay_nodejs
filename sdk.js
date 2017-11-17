@@ -10,9 +10,10 @@ exports.OrderDetail = function (mhtOrderName,mhtOrderDetail,mhtOrderAmt,mhtGoods
     this.mhtGoodsTag = mhtGoodsTag;
 }
 
-exports.App = function (appId,appKey){
+exports.App = function (appId,appKey,isDev){
 	this.appId=appId;
 	this.appKey=appKey;
+	this.isDev = isDev;
 }
 
 
@@ -436,7 +437,13 @@ function queryOrder(mhtOrderNo,app,deviceType) {
 	}
 	content = content.substring(0,content.length-1);
 
-	return post(content,"https://pay.ipaynow.cn");
+	var posturl = "";  
+	if(app.isDev){
+		posturl = "https://dby.ipaynow.cn/api/payment/";  
+	}else{
+		posturl = "https://pay.ipaynow.cn/";  
+	}  
+	return post(content,posturl);
 }
 
 
@@ -473,7 +480,13 @@ exports.refundOrder = function (mhtOrderNo,app,amount,reason) {
 	}
 	content = content.substring(0,content.length-1);
 
-	return post(content,"https://pay.ipaynow.cn/refund/refundOrder");
+	var posturl = "";  
+	if(app.isDev){
+		posturl = "https://dby.ipaynow.cn/refund_access/refundOrder";  
+	}else{
+		posturl = "https://pay.ipaynow.cn/refund/refundOrder";  
+	}  
+	return post(content,posturl);
 }
 
 
@@ -504,8 +517,13 @@ exports.refundOrder = function (mhtOrderNo,app,amount,reason) {
 			content += util.url_encode(m[k])+"&"
 		}
 		content = content.substring(0,content.length-1);
-
-		return post(content,"https://pay.ipaynow.cn/refund/refundQuery");
+		var posturl = "";  
+		if(app.isDev){
+			posturl = "https://dby.ipaynow.cn/refund_access/refundQuery";  
+		}else{
+			posturl = "https://pay.ipaynow.cn/refund/refundQuery";  
+		}
+		return post(content,posturl);
      }
 
 
@@ -541,7 +559,13 @@ exports.refundOrder = function (mhtOrderNo,app,amount,reason) {
 		}
 		content = content.substring(0,content.length-1);
 
-		return post(content,"https://pay.ipaynow.cn/refund/refundOrder");
+		var posturl = "";  
+		if(app.isDev){
+			posturl = "https://dby.ipaynow.cn/refund_access/refundOrder";  
+		}else{
+			posturl = "https://pay.ipaynow.cn/refund/refundOrder";  
+		}
+		return post(content,posturl);
      }
 
     
@@ -571,7 +595,13 @@ exports.refundOrder = function (mhtOrderNo,app,amount,reason) {
 		}
 		content = content.substring(0,content.length-1);
 
-		return post(content,"https://pay.ipaynow.cn/refund/refundQuery");
+		var posturl = "";  
+		if(app.isDev){
+			posturl = "https://dby.ipaynow.cn/refund_access/refundQuery";  
+		}else{
+			posturl = "https://pay.ipaynow.cn/refund/refundQuery";  
+		}
+		return post(content,posturl);
     }
 
 
@@ -658,7 +688,13 @@ function pay(app,orderDetail,channelAuthCode,consumerCreateIp,mhtSubMchId,device
 	}
 	content = content.substring(0,content.length-1);
 
-	return post(content,"https://pay.ipaynow.cn/");
+	var posturl = "";  
+	if(app.isDev){
+		posturl = "https://dby.ipaynow.cn/api/payment/";  
+	}else{
+		posturl = "https://pay.ipaynow.cn/";  
+	}  
+	return post(content,posturl);
 }
 
 
